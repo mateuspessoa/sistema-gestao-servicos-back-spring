@@ -21,6 +21,11 @@ public class ServicoService {
 	public Servico inserir(Servico servico) {
 		//return servicoRepository.save(servico);
 		//OU
+		if(servico.getValorPago() == null || servico.getValorPago() == 0 || servico.getDataPagamento() == null) {
+			servico.setStatus("pendente");
+		}else {
+			servico.setStatus("realizado");
+		}
 		Servico servicoBanco = servicoRepository.saveAndFlush(servico);
 		return servicoBanco;
 	}
