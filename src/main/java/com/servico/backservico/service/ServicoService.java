@@ -22,6 +22,10 @@ public class ServicoService {
 		return servicoRepository.buscarServicosPagamentoPendente();
 	}
 	
+	public List<Servico> buscarServicosCancelados(){
+		return servicoRepository.buscarServicosCancelados();
+	}
+	
 	public Servico inserir(Servico servico) {
 		//return servicoRepository.save(servico);
 		//OU
