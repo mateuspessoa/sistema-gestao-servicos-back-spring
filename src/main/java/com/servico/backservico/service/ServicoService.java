@@ -18,6 +18,10 @@ public class ServicoService {
 		return servicoRepository.findAll();
 	}
 	
+	public List<Servico> buscarServicosPagamentoPendente(){
+		return servicoRepository.buscarServicosPagamentoPendente();
+	}
+	
 	public Servico inserir(Servico servico) {
 		//return servicoRepository.save(servico);
 		//OU
