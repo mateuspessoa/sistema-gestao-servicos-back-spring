@@ -31,6 +31,9 @@ public class ServicoService {
 	}
 	
 	public Servico alterar(Servico servico) {
+		if(servico.getValorPago() != null && servico.getValorPago() > 0 && servico.getDataPagamento() != null) {
+			servico.setStatus("realizado");
+		}
 		return servicoRepository.saveAndFlush(servico);
 	}
 	
