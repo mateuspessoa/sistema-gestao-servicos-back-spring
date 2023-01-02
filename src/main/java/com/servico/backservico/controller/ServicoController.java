@@ -2,7 +2,6 @@ package com.servico.backservico.controller;
 
 import java.util.List;
 
-import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -43,6 +42,12 @@ public class ServicoController {
 	@PostMapping("/")
 	public Servico inserir(@RequestBody Servico servico) {
 		return servicoService.inserir(servico);
+	}
+	
+	@PostMapping("/{id}")
+	public ResponseEntity<Void> cancelar(@PathVariable("id") Long id){
+		 servicoService.cancelarServico(id);
+		 return ResponseEntity.ok().build();
 	}
 	
 	@PutMapping("/")
